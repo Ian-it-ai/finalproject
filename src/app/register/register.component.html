@@ -1,0 +1,19 @@
+<div class="content">
+  <div class="flex-div">
+    <div class="name-content">
+      <h1 class="logo" style="color:crimson">Instagram</h1>
+      <p>Engage with content, use Stories, join communities, collaborate, send DMs, participate in live sessions, be authentic, follow and support, create engaging content, and attend virtual events to make friends on Instagram.
+    </div>
+    <form [formGroup]="registerForm" (ngSubmit)="onSubmit()">
+      <!-- Add this inside your email input field -->
+      <input type="email" placeholder="Enter your email" formControlName="email" required />
+      <input type="text" placeholder="Username" formControlName="username" required />
+      <input type="password" placeholder="Password" formControlName="password" required>
+      <div *ngIf="errorMessage" class="error-message" style="color: red;">{{ errorMessage }}</div> <!-- Display error message -->
+      <button type="submit" class="login" style="background-color: crimson;">Register</button>
+      <!-- <a href="#">Forgot Password?</a> -->
+      <hr>
+      <button type="button" class="create-account" (click)="navigateToLogin()">Already have an account</button>
+    </form>
+  </div>
+</div>
